@@ -1,0 +1,85 @@
+<aside class="sidebar" id="sidebar">
+    <div class="logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">{{ .Site.Title }}</div>
+    </div>
+    
+    <ul class="nav-menu">
+        <li class="nav-item">
+            <a href="{{ .Site.BaseURL }}" class="nav-link {{ if .IsHome }}active{{ end }}">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ "posts" | absURL }}" class="nav-link {{ if eq .Type "posts" }}active{{ end }}">
+                <i class="fas fa-edit"></i>
+                <span>Posts</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ "pages" | absURL }}" class="nav-link {{ if eq .Type "pages" }}active{{ end }}">
+                <i class="fas fa-file-alt"></i>
+                <span>Pages</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="fas fa-image"></i>
+                <span>Media</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="fas fa-comment"></i>
+                <span>Comments</span>
+            </a>
+        </li>
+    </ul>
+    
+    <div class="sidebar-section">
+        <div class="sidebar-title">Site Configuration</div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-paint-brush"></i>
+                    <span>Appearance</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-plug"></i>
+                    <span>Plugins</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="sidebar-section">
+        <div class="sidebar-title">Statistics</div>
+        <div class="stat-card" style="background-color: var(--bg-tertiary); padding: 1rem; margin-bottom: 1rem;">
+            <div style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Site Visits</div>
+            <div style="font-size: 1.25rem; font-weight: 700;">1,284</div>
+            <div style="font-size: 0.75rem; color: var(--success-color); display: flex; align-items: center;">
+                <i class="fas fa-arrow-up" style="margin-right: 0.25rem;"></i>
+                <span>12% from last week</span>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+</div>
