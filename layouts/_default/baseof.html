@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body>
+    <div class="site-wrapper">
+        {{ partial "sidebar.html" . }}
+        
+        <div class="main-content">
+            {{ partial "header.html" . }}
+            
+            <main class="dashboard-content">
+                {{ block "main" . }}{{ end }}
+            </main>
+            
+            {{ partial "footer.html" . }}
+        </div>
+        
+        {{ partial "cookie-consent.html" . }}
+    </div>
+
+    {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}"></script>
+</body>
+</html>
